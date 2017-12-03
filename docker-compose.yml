@@ -1,0 +1,16 @@
+version: '2'
+services:
+    dw112:
+      container_name: FTB
+      hostname: FTB
+      image: 7h3ju57/ftb-server:latest
+      restart: unless-stopped
+      ports:
+        - 25565:25565
+      volumes:
+        - ./volume/data:/data:rw
+      environment:
+        - "MODPACK=FTB Presents Direwolf20 1.12"
+        - "MOTD=FTB Presents Direwolf20 1.12 - Docker!"
+        - "OPS=7h3ju57"
+        - "UPDATE=yes"
